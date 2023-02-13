@@ -3,19 +3,28 @@
 [![npm](https://img.shields.io/npm/v/react-native-hole-view.svg)](https://npmjs.com/package/react-native-hole-view)
 [![npm](https://img.shields.io/npm/dw/react-native-hole-view.svg)](https://npmjs.com/package/react-native-hole-view)
 
+#DISCLAIMER
+
+This is NOT the original version of the hole-view lib. This is just a patch to allow it to run in react-native 0.71.
+
 ## How it works
 
 <img src="misc/demo1.gif" alt="drawing" width="245" height="500"/>
 
 <details>
 <summary>code</summary>
-  
-```js
-import { RNHoleView } from 'react-native-hole-view';
 
-<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  <Text style={{ flexGrow: 0, flex: 0, padding: 10 }}>{"Wow! I'm a text inside a hole!"}</Text>
-  <TouchableOpacity onPress={() => {}} style={{ backgroundColor: 'pink', padding: 10, borderRadius: 5 }}>
+```js
+import { RNHoleView } from "react-native-hole-view";
+
+<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+  <Text style={{ flexGrow: 0, flex: 0, padding: 10 }}>
+    {"Wow! I'm a text inside a hole!"}
+  </Text>
+  <TouchableOpacity
+    onPress={() => {}}
+    style={{ backgroundColor: "pink", padding: 10, borderRadius: 5 }}
+  >
     <Text>{"Wow! I'm a button inside a hole!"}</Text>
   </TouchableOpacity>
   <ScrollView style={{ flexGrow: 0, flex: 0, padding: 10 }} horizontal={true}>
@@ -26,11 +35,17 @@ import { RNHoleView } from 'react-native-hole-view';
     </Text>
   </ScrollView>
   <RNHoleView
-    style={{ position: 'absolute', width: '100%', height: '100%', backgroundColor: 'rgba(34,146,231,0.4)' }}
-    holes={[{ x: 150, y: 390, width: 120, height: 120, borderRadius: 60 }]}>
-  </RNHoleView>
-</View>
+    style={{
+      position: "absolute",
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(34,146,231,0.4)",
+    }}
+    holes={[{ x: 150, y: 390, width: 120, height: 120, borderRadius: 60 }]}
+  ></RNHoleView>
+</View>;
 ```
+
 </details>
 
 Works with any nested views:
@@ -63,6 +78,7 @@ import Video from 'react-native-video';
   </RNHoleView>
 </View>
 ```
+
 </details>
 
 Can be animated:
@@ -154,6 +170,7 @@ const App = () => {
     );
 };
 ```
+
 </details>
 
 ## Getting started
@@ -187,20 +204,22 @@ https://github.com/facebook/react-native/pull/28956
 
 ## Troubleshooting
 
-If you have any diffuculties - please take a look on `example/` app first. 
+If you have any diffuculties - please take a look on `example/` app first.
 
 In case you have xcode build error poining on this line
+
 ```objectivec
 #import "RCTBridgeModule.h"
 ```
-please use version 2.0.*
-  
+
+please use version 2.0.\*
+
 ## Running the example:
-  
-  1. Clone the repo
-  2. `cd example`
-  3. `yarn`
-  4. `cd ios`
-  5. `pod install`
-  6. `cd ..`
-  7. `yarn run android` or `yarn run ios`
+
+1. Clone the repo
+2. `cd example`
+3. `yarn`
+4. `cd ios`
+5. `pod install`
+6. `cd ..`
+7. `yarn run android` or `yarn run ios`
